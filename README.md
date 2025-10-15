@@ -54,6 +54,39 @@ npx serve -l 5500
 ```
 Truy cập: `http://localhost:5500/HTML/index.html`
 
+## ☁️ Triển khai lên Vercel
+
+### Chuẩn bị
+- Tạo tài khoản tại [vercel.com](https://vercel.com/) và cài đặt [Vercel CLI](https://vercel.com/docs/cli) nếu muốn deploy bằng dòng lệnh: `npm i -g vercel`.
+- Đảm bảo đã cài Git và commit toàn bộ thay đổi trước khi deploy.
+
+### Triển khai qua giao diện web
+1. Push mã nguồn lên GitHub/GitLab/Bitbucket.
+2. Đăng nhập Vercel, chọn **Add New Project**.
+3. Ở bước cấu hình như hình bạn gửi:
+   - **Framework Preset**: chọn **Other**.
+   - **Root Directory**: để `.` (mặc định) vì mã nguồn nằm ở thư mục gốc.
+   - Trong mục **Build and Output Settings** nhấn **Edit** và:
+     - Để trống **Install Command** và **Build Command** (không cần build cho site tĩnh).
+     - Nhập `HTML` vào **Output Directory** để Vercel coi nội dung thư mục này là gốc của website.
+4. Nhấn **Deploy**. Khi Output Directory đã trỏ tới `HTML`, các file `index.html`, `about.html`, ... sẽ nằm trực tiếp ở cấp gốc deploy nên không cần thêm bước rewrite.
+
+### Triển khai bằng Vercel CLI
+```bash
+# Lần đầu
+vercel
+
+# Các lần cập nhật tiếp theo
+vercel --prod
+```
+- Khi được hỏi *"What's your project's root directory?"*, nhập `.` (thư mục hiện tại).
+- Khi CLI hỏi về build, hãy để trống **Install Command** và **Build Command**, nhập `HTML` cho **Output Directory**.
+- Sau khi thiết lập lần đầu, Vercel sẽ lưu cấu hình vào thư mục `.vercel` và các lần `vercel --prod` tiếp theo sẽ tự động đọc lại, chỉ cần đảm bảo `vercel.json` còn thuộc tính `"cleanUrls": true` để truy cập được `/about`, `/blog`, ... mà không cần đuôi `.html`.
+
+### Sau khi deploy
+- Kiểm tra các trang `/`, `/about`, `/blog`, `/news`, `/contact`, `/blog-post1`, `/blog-post2`.
+- Nếu cập nhật nội dung, chỉ cần commit và chạy lại `vercel --prod` hoặc sử dụng tính năng **Redeploy** trên dashboard.
+
 ## 📝 Nội dung
 
 ### Blog Posts
