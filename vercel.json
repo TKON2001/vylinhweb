@@ -8,14 +8,6 @@
       { "source": "/blog",    "destination": "/HTML/blog.html" },
       { "source": "/news",    "destination": "/HTML/news.html" },
       { "source": "/contact", "destination": "/HTML/contact.html" }
-    ],
-    "headers": [
-      {
-        "source": "/(images|CSS|js|videos)/(.*)",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-        ]
-      }
     ]
   }
   
