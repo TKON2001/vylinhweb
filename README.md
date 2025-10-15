@@ -68,8 +68,8 @@ Truy cập: `http://localhost:5500/HTML/index.html`
    - **Root Directory**: để `.` (mặc định) vì mã nguồn nằm ở thư mục gốc.
    - Trong mục **Build and Output Settings** nhấn **Edit** và:
      - Để trống **Install Command** và **Build Command** (không cần build cho site tĩnh).
-     - Nhập `HTML` vào **Output Directory** để Vercel phục vụ đúng thư mục chứa các file `.html`, `.css`, `.js`.
-4. Nhấn **Deploy**. Vercel sẽ tự động sử dụng `vercel.json` để ánh xạ các đường dẫn `/`, `/about`, `/blog`, ... tới đúng file HTML trong thư mục `HTML/`.
+     - Nhập `HTML` vào **Output Directory** để Vercel coi nội dung thư mục này là gốc của website.
+4. Nhấn **Deploy**. Khi Output Directory đã trỏ tới `HTML`, các file `index.html`, `about.html`, ... sẽ nằm trực tiếp ở cấp gốc deploy nên không cần thêm bước rewrite.
 
 ### Triển khai bằng Vercel CLI
 ```bash
@@ -81,7 +81,7 @@ vercel --prod
 ```
 - Khi được hỏi *"What's your project's root directory?"*, nhập `.` (thư mục hiện tại).
 - Khi CLI hỏi về build, hãy để trống **Install Command** và **Build Command**, nhập `HTML` cho **Output Directory**.
-- Sau khi thiết lập lần đầu, Vercel sẽ lưu cấu hình vào thư mục `.vercel` và các lần `vercel --prod` tiếp theo sẽ tự động đọc cùng với `vercel.json` để triển khai site tĩnh.
+- Sau khi thiết lập lần đầu, Vercel sẽ lưu cấu hình vào thư mục `.vercel` và các lần `vercel --prod` tiếp theo sẽ tự động đọc lại, chỉ cần đảm bảo `vercel.json` còn thuộc tính `"cleanUrls": true` để truy cập được `/about`, `/blog`, ... mà không cần đuôi `.html`.
 
 ### Sau khi deploy
 - Kiểm tra các trang `/`, `/about`, `/blog`, `/news`, `/contact`, `/blog-post1`, `/blog-post2`.
