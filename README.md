@@ -22,14 +22,13 @@ Website chủ đề "Sự tham gia của thanh niên vào an ninh quốc phòng"
 
 ```
 Website-ThanhNienQP/
-├── HTML/                   # Các trang web
-│   ├── index.html          # Trang chủ
-│   ├── about.html          # Giới thiệu
-│   ├── blog.html           # Danh sách blog
-│   ├── blog-post1.html     # Bài blog chi tiết 1
-│   ├── blog-post2.html     # Bài blog chi tiết 2
-│   ├── news.html           # Tin tức
-│   └── contact.html        # Liên hệ
+├── index.html              # Trang chủ
+├── about.html              # Giới thiệu
+├── blog.html               # Danh sách blog
+├── blog-post1.html         # Bài blog chi tiết 1
+├── blog-post2.html         # Bài blog chi tiết 2
+├── news.html               # Tin tức
+├── contact.html            # Liên hệ
 ├── CSS/
 │   └── style.css           # Stylesheet chung
 ├── js/
@@ -42,7 +41,7 @@ Website-ThanhNienQP/
 ## 🚀 Cách chạy
 
 ### Cách 1: Mở trực tiếp
-Mở file `HTML/index.html` bằng trình duyệt
+Mở file `index.html` bằng trình duyệt
 
 ### Cách 2: Local server
 ```bash
@@ -52,7 +51,40 @@ python -m http.server 5500
 # Node.js
 npx serve -l 5500
 ```
-Truy cập: `http://localhost:5500/HTML/index.html`
+Truy cập: `http://localhost:5500/index.html`
+
+## ☁️ Triển khai lên Vercel
+
+### Chuẩn bị
+- Tạo tài khoản tại [vercel.com](https://vercel.com/) và cài đặt [Vercel CLI](https://vercel.com/docs/cli) nếu muốn deploy bằng dòng lệnh: `npm i -g vercel`.
+- Đảm bảo đã cài Git và commit toàn bộ thay đổi trước khi deploy.
+
+### Triển khai qua giao diện web
+1. Push mã nguồn lên GitHub/GitLab/Bitbucket.
+2. Đăng nhập Vercel, chọn **Add New Project**.
+3. Ở bước cấu hình như hình bạn gửi:
+   - **Framework Preset**: chọn **Other**.
+   - **Root Directory**: để `.` (mặc định) vì mã nguồn nằm ở thư mục gốc.
+   - Trong mục **Build and Output Settings** nhấn **Edit** và:
+     - Để trống **Install Command** và **Build Command** (không cần build cho site tĩnh).
+     - **Để trống Output Directory** để Vercel sử dụng chính thư mục gốc (nơi chứa `index.html`).
+4. Nhấn **Deploy**. Nếu trước đó bạn đã lỡ lưu cấu hình với Output Directory là `HTML`, hãy vào **Settings → General → Build & Development Settings** của dự án và xóa giá trị này trước khi deploy lại.
+
+### Triển khai bằng Vercel CLI
+```bash
+# Lần đầu
+vercel
+
+# Các lần cập nhật tiếp theo
+vercel --prod
+```
+- Khi được hỏi *"What's your project's root directory?"*, nhập `.` (thư mục hiện tại).
+- Khi CLI hỏi về build, hãy để trống **Install Command**, **Build Command** và **Output Directory** (chỉ cần nhấn Enter cho từng câu hỏi).
+- Sau khi thiết lập lần đầu, Vercel sẽ lưu cấu hình vào thư mục `.vercel`. Nếu đã cấu hình sai Output Directory ở lần trước, xóa thư mục `.vercel` rồi chạy lại `vercel` để thiết lập mới.
+
+### Sau khi deploy
+- Kiểm tra các trang `/index.html`, `/about.html`, `/blog.html`, `/news.html`, `/contact.html`, `/blog-post1.html`, `/blog-post2.html`.
+- Nếu cập nhật nội dung, chỉ cần commit và chạy lại `vercel --prod` hoặc sử dụng tính năng **Redeploy** trên dashboard.
 
 ## ☁️ Triển khai lên Vercel
 
