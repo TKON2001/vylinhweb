@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "routes": [
+      { "src": "^/$", "dest": "/HTML/index.html" },
+      { "src": "^/about$", "dest": "/HTML/about.html" },
+      { "src": "^/blog$", "dest": "/HTML/blog.html" },
+      { "src": "^/news$", "dest": "/HTML/news.html" },
+      { "src": "^/contact$", "dest": "/HTML/contact.html" }
+    ],
+    "headers": [
+      {
+        "source": "/(images|CSS|js|videos)/(.*)",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      }
+    ]
+  }
+  
