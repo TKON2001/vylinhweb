@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      alert('Đã gửi liên hệ! Chúng tôi sẽ phản hồi sớm.');
+  alert('Contact sent! We will reply shortly.');
       try { form.reset(); } catch (err) {}
     });
   }

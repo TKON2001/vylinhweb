@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thanh niên &amp; An ninh Quốc phòng – Contact</title>
+  <title>Youth &amp; National Defense – Contact</title>
   <link rel="stylesheet" href="CSS/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1 class="logo">Thanh niên &amp; An ninh Quốc phòng</h1>
+  <h1 class="logo">Youth &amp; National Defense</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -20,49 +20,86 @@
   </header>
 
   <main>
-    <h2>Liên hệ với chúng tôi</h2>
-    <p>Nếu bạn có câu hỏi hoặc muốn đăng ký tham gia hoạt động, hãy điền thông tin vào mẫu dưới đây. Chúng tôi sẽ sớm liên hệ lại với bạn.</p>
+  <h2>Contact Us</h2>
+  <p>If you have questions or want to sign up for activities, please fill out the form below. We will contact you shortly.</p>
     <div class="contact-grid">
       <div class="contact-image">
         <img src="images/contact_portrait.webp" alt="Nữ sinh quân sự hiện đại" />
       </div>
       <form action="#" method="post" class="contact-form">
-        <label for="name">Họ và tên</label>
-        <input type="text" id="name" name="name" required placeholder="Nhập họ tên">
+  <label for="name">Full name</label>
+  <input type="text" id="name" name="name" required placeholder="Enter your full name">
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="Nhập email">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required placeholder="Enter your email">
 
-        <label for="phone">Điện thoại</label>
-        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
+  <label for="phone">Phone</label>
+  <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
 
-        <label for="subject">Chủ đề</label>
-        <input type="text" id="subject" name="subject" placeholder="Ví dụ: Đăng ký tham gia">
+  <label for="subject">Subject</label>
+  <input type="text" id="subject" name="subject" placeholder="e.g. Sign up for activities">
 
-        <label for="message">Nội dung</label>
-        <textarea id="message" name="message" rows="6" required placeholder="Viết tin nhắn của bạn"></textarea>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="6" required placeholder="Write your message"></textarea>
 
         <label class="checkbox-label">
           <input type="checkbox" id="agree" required> 
-          Tôi đồng ý với điều khoản xử lý dữ liệu cá nhân
+          I agree to the personal data processing terms
         </label>
 
-        <input type="submit" value="Gửi liên hệ" />
+  <input type="submit" value="Send message" />
       </form>
 
       <div class="contact-info">
-        <h3>Thông tin liên lạc</h3>
-        <p>📍 <strong>Địa chỉ:</strong> 123 Đường Chiến Thắng, Quận Thanh Xuân, Hà Nội</p>
-        <p>📞 <strong>Điện thoại:</strong> (04) 1234 5678</p>
+        <h3>Contact information</h3>
+        <p>📍 <strong>Address:</strong> 123 Chien Thang Street, Thanh Xuan District, Hanoi</p>
+        <p>📞 <strong>Phone:</strong> (04) 1234 5678</p>
         <p>✉️ <strong>Email:</strong> lienhe@thanhnien-qp.vn</p>
-        <p>⏰ <strong>Giờ làm việc:</strong> 8:00 – 17:00 (T2–T6)</p>
-        <p>🔗 <strong>Mạng xã hội:</strong> Facebook, Zalo, YouTube</p>
+        <p>⏰ <strong>Working hours:</strong> 8:00 – 17:00 (Mon–Fri)</p>
+        <p>🔗 <strong>Social:</strong> Facebook, Zalo, YouTube</p>
+        
+        <h3>Training Locations</h3>
+        <div class="location-list">
+          <div class="location-item">
+            <span class="location-marker">📍</span>
+            <div>
+              <h4>Main Training Center</h4>
+              <p>123 Chien Thang Street, Thanh Xuan District, Hanoi</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <span class="location-marker">📍</span>
+            <div>
+              <h4>Fire Training Facility</h4>
+              <p>456 Dai La Street, Hai Ba Trung District, Hanoi</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <span class="location-marker">📍</span>
+            <div>
+              <h4>Military Training Ground</h4>
+              <p>789 Nguyen Trai Street, Ha Dong District, Hanoi</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.9711385927125!2d105.81166081532284!3d20.996969186015635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac9504917049%3A0xf24f4b07305c1656!2sChien%20Thang%20Street%2C%20Thanh%20Xu%C3%A2n%2C%20Hanoi%2C%20Vietnam!5e0!3m2!1sen!2s!4v1625641234567!5m2!1sen!2s"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Thanh niên &amp; An ninh Quốc phòng</p>
+  <p>&copy; 2025 Youth &amp; National Defense</p>
   </footer>
   <script src="js/main.js"></script>
 </body>
